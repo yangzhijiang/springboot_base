@@ -1,0 +1,66 @@
+group 'com.zxdc'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    repositories {
+          mavenCentral()
+//        mavenLocal()//maven的本地仓
+//        jcenter()//官方仓
+    }
+    dependencies {
+//        classpath("org.gradle.api.plugins:gradle-tomcat-plugin:1.2.5")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.3.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+version = '1.0'
+buildDir = 'target'
+
+jar {
+    baseName = 'springboot_base'
+    version =  '1.0.0'
+}
+
+configurations {
+    //不进行依赖传递，否则要下载很多依赖项
+    //例如 flex-framework
+    starling.transitive = false
+}
+
+sourceCompatibility = 1.7
+
+repositories {
+    mavenCentral()
+}
+
+[compileJava, javadoc, compileTestJava]*.options*.encoding = 'UTF-8'
+
+//dependencies {
+
+    //compile : 编译时需要的依赖
+    //runtime : 运行时需要的依赖,包括compile
+    //testCompile : testCase编译时需要的依赖
+    //testRuntime : testCase运行时需要的依赖,包括testCompile
+    //还有两个不常用的archives、defaul
+
+//    compile 'org.springframework:spring-jdbc:4.1.4.RELEASE'
+//    compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+////    compile 'org.hsqldb:hsqldb'
+////    compile 'org.apache.tomcat:tomcat-jdbc:8.0.18'
+//    testCompile 'junit:junit:4.11'
+//    testCompile 'org.springframework.boot:spring-boot-starter-test'
+//    testCompile group: 'junit', name: 'junit', version: '4.12'
+//}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+}
+
+idea.project {
+    jdkName = '1.7'
+    languageLevel = '1.7'
+}

@@ -1,0 +1,45 @@
+group 'com.zxdc'
+version '1.0-SNAPSHOT'
+buildDir = 'target'
+
+buildscript {
+    ext {
+        springBootVersion = '1.5.3.RELEASE'
+    }
+    repositories {
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+apply plugin: 'java'
+apply plugin: 'idea'
+idea.project {
+    jdkName = '1.7'
+    languageLevel = '1.7'
+}
+
+apply plugin: 'org.springframework.boot'
+
+jar {
+    baseName = 'springboot_base'
+    version =  '1.0.0'
+}
+
+sourceCompatibility = 1.7
+
+[compileJava, javadoc, compileTestJava]*.options*.encoding = 'UTF-8'
+
+repositories {
+    maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+}
+
+dependencies {
+    compile 'jstl:jstl:1.2'
+    compile("org.springframework.boot:spring-boot-starter-web:1.5.6.RELEASE")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa:1.5.6.RELEASE")
+    compile("org.springframework.boot:spring-boot-starter-velocity")
+    compile("mysql:mysql-connector-java:5.1.43")
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
