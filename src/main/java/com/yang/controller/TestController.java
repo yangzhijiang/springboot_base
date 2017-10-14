@@ -22,6 +22,7 @@ public class TestController {
     @RequestMapping("/getuser")
     public User getUser(Long id) throws Exception {
 
+        
         logger.info("rest test");
         if(true){
             throw new RestControllerException("restException");

@@ -8,3 +8,7 @@ springboot_base.ipr
 springboot_base.iws
 springboot_base.log
 
+*.log
+
+
+
