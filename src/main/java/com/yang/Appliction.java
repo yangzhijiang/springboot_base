@@ -45,8 +45,8 @@ public class Appliction extends WebMvcConfigurerAdapter {
     public void init(){
 
         logger.info("+++++++++运行环境+++++++++++\n" +
-                "++++++++++"+active+"++++++++\n"+
-                "++++++++++++++++++++++++\n");
+                    "++++++++++"+active+"++++++++\n"+
+                    "++++++++++++++++++++++++++++\n");
 
     }
 }

@@ -1,43 +1,54 @@
 package com.yang.dao.entity;
 
+import com.yang.common.base.BaseEntity;
+
 import javax.persistence.*;
-import java.io.Serializable;
-
 @Entity
-@Table(name = "t_user",catalog = "db_admin")
-public class User implements Serializable {
+@Table(name = "t_user")
+public class User extends BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
-    @Column(name = "f_name")
-    private String name;
+    @Column(name = "f_nick_name")
+    private String nickName;
 
-    @Column(name = "f_age")
-    private Integer age;
+    @Column(name = "f_real_name")
+    private String realName;
 
-    public Long getId() {
-        return id;
+    @Column(name = "f_phone")
+    private String phone;
+
+    @Column(name = "f_password")
+    private String password;
+
+    public String getNickName() {
+        return nickName;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
     }
 
-    public String getName() {
-        return name;
+    public String getRealName() {
+        return realName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setRealName(String realName) {
+        this.realName = realName;
     }
 
-    public Integer getAge() {
-        return age;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

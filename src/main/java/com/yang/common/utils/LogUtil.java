@@ -10,7 +10,7 @@ public class LogUtil {
 
     public static String requestLog(HttpServletRequest request){
 
-        StringBuffer sb = new StringBuffer("[");
+        StringBuffer sb = new StringBuffer("url : "+request.getRequestURL().toString()+",param : [");
 
         Enumeration<String> enumeration = request.getParameterNames();
         while (enumeration.hasMoreElements()){

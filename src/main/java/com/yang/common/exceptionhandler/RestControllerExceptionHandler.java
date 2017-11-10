@@ -1,20 +1,16 @@
 package com.yang.common.exceptionhandler;
 
 import com.yang.common.constants.ErrCodeConstant;
-import com.yang.common.exception.RestControllerException;
+
 import com.yang.common.exception.ServiceException;
 import com.yang.common.exception.SysException;
 import com.yang.common.globalbean.ApiResult;
 import com.yang.common.utils.LogUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.core.Ordered;
-import org.springframework.core.annotation.Order;
+
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-
-import java.util.HashMap;
-import java.util.Map;
 
 @RestControllerAdvice
 public class RestControllerExceptionHandler {
