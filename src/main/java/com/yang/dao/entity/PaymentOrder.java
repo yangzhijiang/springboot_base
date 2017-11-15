@@ -1,11 +1,16 @@
 package com.yang.dao.entity;
 
-import com.yang.common.base.BaseEntity;
+
+import com.yang.common.base.dao.BaseEntity;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+@DynamicInsert
+@DynamicUpdate
 @Entity
 @Table(name = "t_payment_order")
 public class PaymentOrder extends BaseEntity {

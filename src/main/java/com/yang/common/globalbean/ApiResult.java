@@ -1,6 +1,7 @@
 package com.yang.common.globalbean;
 
-import com.google.gson.JsonObject;
+
+import com.alibaba.fastjson.JSONObject;
 
 public class ApiResult {
 
@@ -11,17 +12,17 @@ public class ApiResult {
 
     public String message;
 
-    public JsonObject data;
+    public JSONObject data;
 
 
 
-    private ApiResult(int code, String message, JsonObject data) {
+    private ApiResult(int code, String message, JSONObject data) {
         this.code = code;
         this.message = message;
         this.data = data;
     }
 
-    public static ApiResult success(JsonObject data){
+    public static ApiResult success(JSONObject data){
 
         ApiResult apiResult = new ApiResult(SUCCESS_CODE,SUCCESS_MESSAGE,data);
         return apiResult;
@@ -53,11 +54,11 @@ public class ApiResult {
         this.message = message;
     }
 
-    public JsonObject getData() {
+    public JSONObject getData() {
         return data;
     }
 
-    public void setData(JsonObject data) {
+    public void setData(JSONObject data) {
         this.data = data;
     }
 }

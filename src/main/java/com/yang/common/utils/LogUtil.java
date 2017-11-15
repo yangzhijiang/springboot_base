@@ -1,6 +1,7 @@
 package com.yang.common.utils;
 
 
+import com.alibaba.fastjson.JSON;
 import com.yang.common.globalbean.ApiResult;
 
 import javax.servlet.http.HttpServletRequest;
@@ -26,7 +27,7 @@ public class LogUtil {
 
     public static String responseLog(ApiResult apiResult){
 
-        return GsonUtil.getGson().toJson(apiResult);
+        return JSON.toJSONString(apiResult);
 
     }
 

@@ -1,4 +1,5 @@
-package com.yang.common.base;
+package com.yang.common.base.dao;
+
 
 import javax.persistence.*;
 import java.io.Serializable;

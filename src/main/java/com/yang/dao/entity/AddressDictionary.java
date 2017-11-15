@@ -1,7 +1,12 @@
 package com.yang.dao.entity;
 
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
+
 import javax.persistence.*;
 
+@DynamicInsert
+@DynamicUpdate
 @Entity
 @Table(name = "t_address_dictionary")
 public class AddressDictionary {

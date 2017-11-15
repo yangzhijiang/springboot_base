@@ -1,10 +1,16 @@
 package com.yang.dao.entity;
 
-import com.yang.common.base.BaseEntity;
+
+
+import com.yang.common.base.dao.BaseEntity;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import java.util.Date;
 
+@DynamicInsert
+@DynamicUpdate
 @Entity
 @Table(name = "t_order")
 public class Order extends BaseEntity {

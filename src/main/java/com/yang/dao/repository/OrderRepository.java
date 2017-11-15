@@ -1,7 +1,8 @@
 package com.yang.dao.repository;
 
+import com.yang.common.base.dao.BaseRepository;
 import com.yang.dao.entity.Order;
-import org.springframework.data.repository.CrudRepository;
 
-public interface OrderRepository extends CrudRepository<Order,Long> {
+public interface OrderRepository extends BaseRepository<Order,Long> {
+
 }
