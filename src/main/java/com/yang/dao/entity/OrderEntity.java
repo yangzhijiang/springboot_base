@@ -13,7 +13,7 @@ import java.util.Date;
 @DynamicUpdate
 @Entity
 @Table(name = "t_order")
-public class Order extends BaseEntity {
+public class OrderEntity extends BaseEntity {
 
     @Column(name = "f_commofify_info")
     private String commodifyInfo;
@@ -41,6 +41,17 @@ public class Order extends BaseEntity {
 
     @Column(name = "f_order_id")
     private Long orderId;
+
+    @Column(name = "f_state")
+    private Integer state;
+
+    public Integer getState() {
+        return state;
+    }
+
+    public void setState(Integer state) {
+        this.state = state;
+    }
 
     public String getCommodifyInfo() {
         return commodifyInfo;

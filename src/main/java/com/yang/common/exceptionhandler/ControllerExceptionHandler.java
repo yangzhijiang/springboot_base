@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 //@ControllerAdvice
-//@Order(Ordered.LOWEST_PRECEDENCE)
+//@OrderEntity(Ordered.LOWEST_PRECEDENCE)
 public class ControllerExceptionHandler {
 
     @ExceptionHandler(ControllerException.class)

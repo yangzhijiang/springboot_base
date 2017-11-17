@@ -1,8 +1,9 @@
 package com.yang.service;
 
-import com.yang.dao.entity.Commodify;
+import com.yang.dao.entity.CommodifyEntity;
 import com.yang.dao.param.CommoditySep;
 import com.yang.dao.repository.CommodifyRepository;
+import com.yang.service.enums.CommodifyStatusEnum;
 import com.yang.service.query.CommodifyQuery;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,6 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.Column;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,10 +27,10 @@ public class ProductService {
      * @param query
      * @return
      */
-    public Page<Commodify> getListByCondition(CommodifyQuery query){
+    public Page<CommodifyEntity> getListByCondition(CommodifyQuery query){
 
         PageRequest pageRequest = buildPageRequest(query);
-        Specification<Commodify> commodifySpecification = buildSpecification(query);
+        Specification<CommodifyEntity> commodifySpecification = buildSpecification(query);
         return commodifyRepository.findAll(commodifySpecification,pageRequest);
 
     }
@@ -45,7 +45,7 @@ public class ProductService {
 
     }
 
-    private Specification<Commodify> buildSpecification(CommodifyQuery query){
+    private Specification<CommodifyEntity> buildSpecification(CommodifyQuery query){
 
         CommoditySep commoditySep = new CommoditySep();
         BeanUtils.copyProperties(query,commoditySep);
@@ -57,7 +57,7 @@ public class ProductService {
      * @param id
      * @return
      */
-    public Commodify getCommodify(Long id){
+    public CommodifyEntity getCommodify(Long id){
         return commodifyRepository.findOne(id);
     }
 
@@ -66,7 +66,7 @@ public class ProductService {
      * @param commodify
      * @return
      */
-    public Commodify insertCommodify(Commodify commodify){
+    public CommodifyEntity insertCommodify(CommodifyEntity commodify){
         return commodifyRepository.save(commodify);
     }
 
@@ -75,9 +75,24 @@ public class ProductService {
      * @param id
      */
     public int offline(Long id){
-        return  commodifyRepository.offline(2,id);
+        return  commodifyRepository.updateState(CommodifyStatusEnum.OFFLINE.getCode(),id);
     }
 
+    /**
+     * 商品上线
+     * @param id
+     */
+    public int online(Long id){
+        return  commodifyRepository.updateState(CommodifyStatusEnum.ONLINR.getCode(),id);
+    }
 
+    /**
+     * 更新商品
+     * @param commodifyEntity
+     * @return
+     */
+    public CommodifyEntity update(CommodifyEntity commodifyEntity){
+        return commodifyRepository.save(commodifyEntity);
+    }
 
 }

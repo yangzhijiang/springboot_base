@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @DynamicUpdate
 @Entity
 @Table(name = "t_shoping_cart")
-public class ShopingCart extends BaseEntity {
+public class ShopingCartEntity extends BaseEntity {
 
 
     @Column(name = "f_commodify_info")

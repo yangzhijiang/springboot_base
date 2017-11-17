@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @DynamicUpdate
 @Entity
 @Table(name = "t_commodify")
-public class Commodify extends BaseEntity {
+public class CommodifyEntity extends BaseEntity {
 
     @Column(name = "f_commodify_id")
     private String commodifyId;

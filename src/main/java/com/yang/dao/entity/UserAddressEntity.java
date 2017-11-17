@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @DynamicUpdate
 @Entity
 @Table(name = "t_user_address")
-public class UserAddress extends BaseEntity {
+public class UserAddressEntity extends BaseEntity {
 
     @Column(name = "f_province_code")
     private Long provinceCode;
@@ -44,6 +44,20 @@ public class UserAddress extends BaseEntity {
 
     @Column(name = "f_is_default")
     private Integer isDefault;
+
+    @Column(name = "f_user_id")
+    private Long userId;
+
+    @Column(name = "f_state")
+    private int state;
+
+    public int getState() {
+        return state;
+    }
+
+    public void setState(int state) {
+        this.state = state;
+    }
 
     public Long getProvinceCode() {
         return provinceCode;
@@ -123,5 +137,13 @@ public class UserAddress extends BaseEntity {
 
     public void setIsDefault(Integer isDefault) {
         this.isDefault = isDefault;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 }

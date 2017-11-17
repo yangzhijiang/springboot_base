@@ -12,7 +12,7 @@ import javax.persistence.*;
 @DynamicUpdate
 @Entity
 @Table(name = "t_user")
-public class User extends BaseEntity {
+public class UserEntity extends BaseEntity {
 
 
     @Column(name = "f_nick_name")

@@ -1,6 +1,6 @@
 package com.yang.dao.param;
 
-import com.yang.dao.entity.Commodify;
+import com.yang.dao.entity.CommodifyEntity;
 import org.springframework.data.jpa.domain.Specification;
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -10,7 +10,7 @@ import javax.persistence.criteria.Root;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CommoditySep implements Specification<Commodify> {
+public class CommoditySep implements Specification<CommodifyEntity> {
 
     private Integer type;
 
@@ -22,7 +22,7 @@ public class CommoditySep implements Specification<Commodify> {
 
 
     @Override
-    public Predicate toPredicate(Root<Commodify> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
+    public Predicate toPredicate(Root<CommodifyEntity> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
         List<Predicate> list = new ArrayList<Predicate>();
         if(null!= type){
             list.add(cb.equal(root.get("type").as(Integer.class),type));

@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @DynamicUpdate
 @Entity
 @Table(name = "t_payment_order")
-public class PaymentOrder extends BaseEntity {
+public class PaymentOrderEntity extends BaseEntity {
 
     @Column(name = "f_order_id")
     private Long orderId;

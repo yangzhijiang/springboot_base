@@ -9,7 +9,7 @@ import javax.persistence.*;
 @DynamicUpdate
 @Entity
 @Table(name = "t_address_dictionary")
-public class AddressDictionary {
+public class AddressDictionaryEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

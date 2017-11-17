@@ -2,8 +2,7 @@ package com.yang.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.yang.common.utils.GsonUtil;
-import com.yang.dao.entity.User;
+import com.yang.dao.entity.UserEntity;
 import com.yang.service.OrderService;
 import com.yang.service.UserServiceImpl;
 import org.slf4j.Logger;
@@ -31,12 +30,12 @@ public class TestController {
 
         logger.info("rest test");
 
-        User user = new User();
-        user.setNickName("哈哈");
-        user.setPhone("15135163108");
-        User user1 = userService.getById(id);
+        UserEntity userEntity = new UserEntity();
+        userEntity.setNickName("哈哈");
+        userEntity.setPhone("15135163108");
+        UserEntity userEntity1 = userService.getById(id);
 
-        return JSON.toJSONString(user1);
+        return JSON.toJSONString(userEntity1);
     }
 
     @RequestMapping("/getList")
@@ -44,11 +43,11 @@ public class TestController {
 
         logger.info("rest test");
 
-        User user = new User();
-        user.setNickName("哈哈");
-        user.setPhone("15135163108");
+        UserEntity userEntity = new UserEntity();
+        userEntity.setNickName("哈哈");
+        userEntity.setPhone("15135163108");
 
-        Page<User> pages = userService.getById(user);
+        Page<UserEntity> pages = userService.getById(userEntity);
 
         JSONObject obj = new JSONObject();
         obj.put("ele",pages.getTotalElements());
@@ -62,11 +61,11 @@ public class TestController {
 
         logger.info("rest test");
 
-        User user = new User();
-        user.setNickName("哈哈");
-        user.setPhone("15135163108");
+        UserEntity userEntity = new UserEntity();
+        userEntity.setNickName("哈哈");
+        userEntity.setPhone("15135163108");
 
-        List<User> pages = userService.getAll();
+        List<UserEntity> pages = userService.getAll();
 
         return JSON.toJSONString(pages);
     }

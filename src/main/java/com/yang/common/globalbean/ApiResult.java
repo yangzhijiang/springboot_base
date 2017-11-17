@@ -12,19 +12,26 @@ public class ApiResult {
 
     public String message;
 
-    public JSONObject data;
+    public Object data;
 
 
 
-    private ApiResult(int code, String message, JSONObject data) {
+    private ApiResult(int code, String message, Object data) {
         this.code = code;
         this.message = message;
         this.data = data;
     }
 
-    public static ApiResult success(JSONObject data){
+    public static ApiResult success(Object data){
 
         ApiResult apiResult = new ApiResult(SUCCESS_CODE,SUCCESS_MESSAGE,data);
+        return apiResult;
+
+    }
+
+    public static ApiResult success(){
+
+        ApiResult apiResult = new ApiResult(SUCCESS_CODE,SUCCESS_MESSAGE,null);
         return apiResult;
 
     }
@@ -54,11 +61,11 @@ public class ApiResult {
         this.message = message;
     }
 
-    public JSONObject getData() {
+    public Object getData() {
         return data;
     }
 
-    public void setData(JSONObject data) {
+    public void setData(Object data) {
         this.data = data;
     }
 }

@@ -10,7 +10,7 @@ import javax.persistence.*;
 @DynamicUpdate
 @Entity
 @Table(name = "t_commodify_type")
-public class CommodifyType {
+public class CommodifyTypeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
