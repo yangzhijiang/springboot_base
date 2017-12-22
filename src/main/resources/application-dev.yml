@@ -5,14 +5,29 @@ spring:
         username: root
         password: root
 
-
 debug: true
 
 test:
     app: test
     name: yangzhijiang
 
-alibaba:
+weixin:
+    appidxcx: wx652061a92a6c6ffb
+    appidpub: wx39636dfff9922463
+    mchid:
+    key:
+    secretxcx: 83acfc8a981d39085a707bb96e1fd64e
+    secretpub: 0c7e04fd75287674cb49a2975389fe86
+    partnerId:
+    payUrl: https://api.mch.weixin.qq.com/pay/unifiedorder
+    openidUrl: https://api.weixin.qq.com/sns/jscode2session?appid=APPID&secret=SECRET&js_code=JSCODE&grant_type=authorization_code
+    accessTokenUrl:
+    notifyUrl:
+
+
+alipay:
+
+tracker.server: 192.168.30.26:22122
 
 
 
